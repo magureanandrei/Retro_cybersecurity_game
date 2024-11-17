@@ -3,6 +3,7 @@ import sys
 
 # Inițializare pygame
 pygame.init()
+score =0
 
 # Setări ecran
 screen_width = 800
