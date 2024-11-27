@@ -1,15 +1,14 @@
 import random
-import time
-
-import pygame
 
 import drawRectangle
 from Declaring import *
 # from fantomite import DARK_RED, screen
 
 bad_answers=0
+base_dir = os.path.join(os.getcwd(), "../assets")
+image_path = os.path.join(base_dir, "retropicture.jpg")
 def loadGame():
-    bg = pygame.image.load("C:\\Users\\raulm\\Documents\\Code\\Hackathon\\Cloudflight_hermes_hackathon\\assets\\retropicture.jpg")
+    bg = pygame.image.load(image_path)
     bg = pygame.transform.scale(bg, (WINDOW_WIDTH, WINDOW_HEIGHT))
     screen.blit(bg, (0, 0))
 

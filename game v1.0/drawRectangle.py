@@ -12,7 +12,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Ecran Start cu Buton")
 
 def loadStartGame():
-    bg = pygame.image.load("wordGuard.jpg")
+    bg = pygame.image.load("../assets/wordGuard.jpg")
     bg = pygame.transform.scale(bg, (screen_width,screen_height))
     screen.blit(bg, (0, 0))
 
@@ -21,7 +21,7 @@ black = (0, 0, 0)
 white = (255, 255, 255)
 
 # Încarcă imaginea butonului
-button_image = pygame.image.load("pressStart.png")
+button_image = pygame.image.load("../assets/pressStart.png")
 
 # Funcția pentru a desena butonul
 def draw_button(surface, image, x, y, width, height):

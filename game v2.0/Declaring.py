@@ -1,10 +1,13 @@
+import os
+
 import pygame
+from pathlib import Path
 
 pygame.init()
 pygame.mixer.init()
 
 # Load background music (make sure the file is in the same folder as the game or provide the correct path)
-pygame.mixer.music.load('retro_music.mp3')  # Replace 'retro_music.mp3' with your file
+pygame.mixer.music.load('../assets/retro_music.mp3')  # Replace 'retro_music.mp3' with your file
 
 # Set volume (optional)
 pygame.mixer.music.set_volume(0.2)  # Volume range: 0.0 to 1.0
@@ -75,11 +78,17 @@ questions =[["Two-factor authentication (2FA) uses two methods to verify your "
         "d) Scanning a QR code to access your account"],"A"]]
 
 # Load images
+base_dir = os.path.join(os.getcwd(), "../assets")
+image_pathg = os.path.join(base_dir, "enemy_green.png")
+image_pathr = os.path.join(base_dir, "enemy_red.png")
+image_pathb = os.path.join(base_dir, "enemy_blue.png")
+image_pathy = os.path.join(base_dir, "enemy_yellow.png")
+
 try:
-    malicious_ship = pygame.transform.scale(pygame.image.load("C:\\Users\\raulm\\Documents\\Code\\Hackathon\\Cloudflight_hermes_hackathon\\assets\\enemy_red.png"), SHIP_SIZE)
-    virus_ship = pygame.transform.scale(pygame.image.load("C:\\Users\\raulm\\Documents\\Code\\Hackathon\\Cloudflight_hermes_hackathon\\assets\\enemy_green.png"), SHIP_SIZE)
-    flood_ship = pygame.transform.scale(pygame.image.load("C:\\Users\\raulm\\Documents\\Code\\Hackathon\\Cloudflight_hermes_hackathon\\assets\\enemy_yellow.png"), SHIP_SIZE)
-    legitimate_ship = pygame.transform.scale(pygame.image.load("C:\\Users\\raulm\\Documents\\Code\\Hackathon\\Cloudflight_hermes_hackathon\\assets\\friendly_blue.png"), SHIP_SIZE)
+    malicious_ship = pygame.transform.scale(pygame.image.load(image_pathg), SHIP_SIZE)
+    virus_ship = pygame.transform.scale(pygame.image.load(image_pathr), SHIP_SIZE)
+    flood_ship = pygame.transform.scale(pygame.image.load(image_pathy), SHIP_SIZE)
+    legitimate_ship = pygame.transform.scale(pygame.image.load(image_pathb), SHIP_SIZE)
     use_images = True
 except pygame.error:
     use_images = False
@@ -87,7 +96,7 @@ except pygame.error:
 
 # Font
 font1 = pygame.font.Font(pygame.font.get_default_font(), 24)
-font = pygame.font.Font('Evil Empire.otf',24)
+font = pygame.font.Font('../assets/Evil Empire.otf', 24)
 small_font = pygame.font.Font(pygame.font.get_default_font(), 16)
 large_font = pygame.font.Font(pygame.font.get_default_font(), 32)
 

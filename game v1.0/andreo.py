@@ -8,7 +8,7 @@ pygame.init()
 pygame.mixer.init()
 
 # Load background music (make sure the file is in the same folder as the game or provide the correct path)
-pygame.mixer.music.load('retro_music.mp3')  # Replace 'retro_music.mp3' with your file
+pygame.mixer.music.load('../assets/retro_music.mp3')  # Replace 'retro_music.mp3' with your file
 
 # Set volume (optional)
 pygame.mixer.music.set_volume(0.2)  # Volume range: 0.0 to 1.0
@@ -87,10 +87,10 @@ def loadStartGame():
 
 # Load images
 try:
-    malicious_ship = pygame.transform.scale(pygame.image.load("enemy_red.png"), SHIP_SIZE)
-    virus_ship = pygame.transform.scale(pygame.image.load("enemy_green.png"), SHIP_SIZE)
-    flood_ship = pygame.transform.scale(pygame.image.load("enemy_yellow.png"), SHIP_SIZE)
-    legitimate_ship = pygame.transform.scale(pygame.image.load("friendly_blue.png"), SHIP_SIZE)
+    malicious_ship = pygame.transform.scale(pygame.image.load("../assets/enemy_red.png"), SHIP_SIZE)
+    virus_ship = pygame.transform.scale(pygame.image.load("../assets/enemy_green.png"), SHIP_SIZE)
+    flood_ship = pygame.transform.scale(pygame.image.load("../assets/enemy_yellow.png"), SHIP_SIZE)
+    legitimate_ship = pygame.transform.scale(pygame.image.load("../assets/enemy_blue.png"), SHIP_SIZE)
     use_images = True
 except pygame.error:
     use_images = False
